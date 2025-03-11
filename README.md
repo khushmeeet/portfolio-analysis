@@ -5,6 +5,8 @@ Using riskfolio-lib to analyze portfolio data
 ### Current Analysis
 
 ```
+python3 main.py
+
 Downloading historical price data...
 YF.download() has changed argument auto_adjust default to True
 [*********************100%***********************]  9 of 9 completed
@@ -54,6 +56,79 @@ Decrease MSFT by 6.33%
 Decrease INTC by 1.27%
 Increase AAPL by 0.09%
 Increase NVDA by 19.33%
+
+Analysis complete.
+```
+
+```
+python3 analyze_portfolio.py
+
+Using predefined portfolio weights:
+VOO: 32.70%
+META: 31.41%
+ARM: 20.55%
+TSM: 15.97%
+TCEHY: 11.19%
+MSFT: 6.33%
+INTC: 1.27%
+AAPL: -0.09%
+NVDA: -19.33%
+
+Downloading historical price data...
+YF.download() has changed argument auto_adjust default to True
+[*********************100%***********************]  9 of 9 completed
+Using 'Close' prices
+Successfully downloaded data for 9 tickers
+Time period: 2023-09-15 00:00:00 to 2025-03-10 00:00:00
+Number of data points: 371
+
+Creating portfolio object...
+
+Current Portfolio - Expected Annual Return: 35.24%
+Current Portfolio - Annual Volatility: 25.98%
+Current Portfolio - Sharpe Ratio: -1.1367
+
+Risk Contribution Analysis:
+ARM: 53.22% of total risk
+META: 27.97% of total risk
+TSM: 15.77% of total risk
+VOO: 11.15% of total risk
+TCEHY: 4.55% of total risk
+MSFT: 2.78% of total risk
+INTC: 0.90% of total risk
+AAPL: -0.03% of total risk
+NVDA: -16.32% of total risk
+
+Portfolio Concentration Score: 0.3274
+Normalized Concentration (0-1 scale): 0.2433
+Your portfolio is relatively well-diversified in terms of allocation.
+
+Sector Exposure Analysis:
+Technology: 67.30%
+Broad Market ETF: 32.70%
+
+Portfolio Recommendations:
+1. Consider reducing these high-concentration positions:
+   - VOO: 32.70% (aim for under 20% per position)
+   - META: 31.41% (aim for under 20% per position)
+   - ARM: 20.55% (aim for under 20% per position)
+
+2. Your portfolio is heavily concentrated in technology stocks.
+   Consider adding exposure to other sectors like:
+   - Healthcare (e.g., XLV, JNJ, PFE)
+   - Consumer Staples (e.g., XLP, PG, KO)
+   - Utilities (e.g., XLU, NEE, DUK)
+   - Financial Services (e.g., XLF, JPM, BAC)
+
+3. You have short positions that increase your portfolio risk:
+   - AAPL: -0.09%
+   - NVDA: -19.33%
+   Short positions have unlimited potential loss and can increase portfolio volatility.
+
+4. Consider adding these assets for better diversification:
+   - Bond ETFs (e.g., BND, AGG, VGLT) to reduce overall portfolio volatility
+   - International market ETFs (e.g., VXUS, EFA, VWO) for geographic diversification
+   - Alternative assets (e.g., GLD, VNQ) that may have lower correlation with stocks
 
 Analysis complete.
 ```
